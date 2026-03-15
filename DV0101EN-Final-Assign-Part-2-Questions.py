@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python       March 12,2026   kgs               
 # coding: utf-8
 
 # In[ ]:
@@ -138,7 +138,7 @@ def update_output_container(selected_statistics, input_year):
 # TASK 2.6: Create and display graphs for Yearly Report Statistics
  # Yearly Statistic Report Plots
     # Check for Yearly Statistics.                             
-    elif (input_year and selected_statistics=='') :
+    elif (input_year and selected_statistics=='Yearly Statistics') :
         yearly_data = data[data['Year'] == input_year]
                               
 
@@ -192,4 +192,3 @@ def update_output_container(selected_statistics, input_year):
 # Run the Dash app
 if __name__ == '__main__':
     app.run(debug=True)
-
