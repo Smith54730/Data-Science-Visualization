@@ -1,4 +1,4 @@
-#!/usr/bin/env python       March 12,2026   kgs               
+#!/usr/bin/env python       March 12,2026   kgs  v2             
 # coding: utf-8
 
 # In[ ]:
@@ -58,9 +58,15 @@ app.layout = html.Div([
             options=[{'label': i, 'value': i} for i in year_list],
             value='Select-year',
         )),
-    html.Div([#TASK 2.3: Add a division for output display
-    html.Div(id='output-container', className='chart-grid', style={'display':'flex'}),])
-])
+   # html.Div([#TASK 2.3: Add a division for output display
+    html.Div(id='output-container', className='chart-grid', style={'display':'flex',
+            'gridTemplateColumns':'1fr 1fr',
+            'gap': '3px',
+            'padding': '3px',
+            'height': '150px',
+            'width' : '800px'})
+             ])
+
 #TASK 2.4: Creating Callbacks
 # Define the callback function to update the input container based on the selected statistics
 @app.callback(
@@ -131,8 +137,8 @@ def update_output_container(selected_statistics, input_year):
 
 
         return [
-            html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'flex'}),
-            html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],style={'display': 'flex'})
+            html.Div(className='chart-item', children=[html.Div(children=R_chart1),html.Div(children=R_chart2)],style={'display': 'grid'}),
+            html.Div(className='chart-item', children=[html.Div(children=R_chart3),html.Div(children=R_chart4)],style={'display': 'grid'})
             ]
 
 # TASK 2.6: Create and display graphs for Yearly Report Statistics
@@ -182,8 +188,8 @@ def update_output_container(selected_statistics, input_year):
 
 #TASK 2.6: Returning the graphs for displaying Yearly data
         return [
-                html.Div(className='chart-item', children=[html.Div(children=Y_chart1),html.Div(children=Y_chart2)],style={'display':'flex'}),
-                html.Div(className='chart-item', children=[html.Div(children=Y_chart3),html.Div(children=Y_chart4)],style={'display':'flex'})
+                html.Div(className='chart-item', children=[html.Div(children=Y_chart1),html.Div(children=Y_chart2)],style={'display':'grid'}),
+                html.Div(className='chart-item', children=[html.Div(children=Y_chart3),html.Div(children=Y_chart4)],style={'display':'grid'})
                 ]
         
     else:
